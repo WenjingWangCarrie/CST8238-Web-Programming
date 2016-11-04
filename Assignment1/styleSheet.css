@@ -1,0 +1,48 @@
+body {
+	font-size: 18px;
+	color: black;
+	font-family: "Times New Roman";
+	background-color: white;
+	text-align: center;
+    position: relative;
+}
+
+p {
+	padding: 10px;
+	text-align: left;
+}
+
+#menu {
+	width: 200px;
+	height: 520px;
+	border: 1px solid CornflowerBlue;
+}
+
+#content {
+	left: 200px;
+	top:-523px;
+	width: 800px;
+	height:520px;
+	position: relative;
+	border: 1px solid CornflowerBlue;
+}
+
+.header {
+	width: 1000px;
+    height: 100px;
+    color: black;
+    font-size: 20px;
+    background-image: url(header.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size:1000px;
+    border: 1px solid CornflowerBlue;
+}
+
+.footer {
+	width: 1000px;
+    height: 100px;
+    top: -525px;
+    position: relative;    
+    border: 1px solid CornflowerBlue;
+}

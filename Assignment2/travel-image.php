@@ -1,10 +1,4 @@
-<?php
-include 'travel-data.php';
-
-asort ( $continents );
-asort ( $countries );
-
-?>
+<?php include 'travel-data.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +35,10 @@ asort ( $countries );
 
 <body>
 
-<?php include 'travel-header.php'; ?>
+<?php
+
+include 'travel-header.php';
+parse_str ( $_SERVER ['QUERY_STRING'] )?>
    
 <div class="container">
 		<!-- start main content container -->
@@ -57,22 +54,27 @@ asort ( $countries );
 				<!-- start main content column -->
 				<ol class="breadcrumb">
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Browse</a></li>
-					<li class="active">Favorites</li>
+					<li><a href="travel.php">Favorites</a></li>
+					<li class="active"><?php echo $images[$id]['title'] ?></li>
 				</ol>
 
-				<h1>Favorites</h1>
-
-				<!-- start post summaries -->
-				<div class="well">
-					<div class="row">
-					
-				<?php
-				foreach ( $images as $img ) {
-					echo "<div class='col-md-3'><a href='travel-image.php?id=$img[id]'><img src='images/travel/medium/$img[path]' width='140px' height='140px' style='margin:10px;'></a></div>";
-				}
-				?> 
-
+				<h1><?php echo $images[$id]['title']?></h1>
+				<div class="row">
+					<div class="col-md-8">
+						<img src='images/travel/medium/<?php echo $images[$id]['path']?>'>
+					</div>
+					<div class="col-md-4">
+						<div class="panel panel-primary">
+							<div class="panel-body">
+								<p>
+									By <a href="#"><?php echo $images[$id]['user']?></a>
+								</p>
+								<p>
+									Taken in <a href="#"><?php echo $images[$id]['country']?></a>
+								</p>
+								<p><?php echo $images[$id]['description']?></p>
+							</div>
+						</div>
 					</div>
 				</div>
 

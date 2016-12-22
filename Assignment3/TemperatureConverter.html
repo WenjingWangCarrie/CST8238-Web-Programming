@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Assignment3-Task1</title>
+
+<script>
+	function convert() {
+		var option = prompt("Please enter a temparature unit:( 1:to convert into Celcius, 2:to convert into Farenhet.)");
+		
+		if (option == 1) {
+			do {
+				var faren = parseFloat(prompt("Please enter a temparature value to be converted to Celcius/Farenhet"));
+			} while (isNaN(faren));
+
+			var cel = (faren - 32) * 5 / 9;
+			alert(faren + "°F converted to celcius is " + cel + "°C");
+
+		} else if (option == 2) {
+			do {
+				var cel = parseFloat(prompt("Please enter a temparature value to be converted to Celcius/Farenhet"));
+			} while (isNaN(cel));
+
+			var faren = cel * 9 / 5 + 32;
+			alert(cel + "°C converted to Farenhet is " + faren + "°F");
+
+		} else {
+			alert("Plase enter a valid number 1 or 2...");
+		}
+	}
+</script>
+</head>
+
+<body>
+	<h3>Assignment3-Task1 - Introduction to JavaScript</h3>
+	<table>
+		<tbody>
+			<tr>
+				<th>Temperature conversion</th>
+			</tr>
+			<tr>
+				<td><input type="button" name="btnConvert" id="btnConvert"
+					onclick="convert();" value="Convert!"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
